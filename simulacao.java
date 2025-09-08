@@ -1,22 +1,30 @@
 package sistema_radar;
 
-public class Radar{
+public class Simulacao{
     
-    public String localizacao;
-    public Integer limiteVelovidade;
+    public static void main(String[] args) {
 
-    public void emitirNotificacao(String placa, Integer velocidadeObservada){
-        System.out.println("Placa: "+placa);
-        System.out.println("Velovidade observada: "+velocidadeObservada);
-        System.out.println("Localizacao: "+this.localizacao);
-        System.out.println("Velovidade da Via: "+this.limiteVelovidade);
-    }
+        Carro porshe = new Carro();
+        porshe.ano = 22;
+        porshe.modelo = "911";
+        porshe.placa = "PAE6518";
+        porshe.velocidade = 0;
 
-    public void avaliarVelocidade(Carro carro){
-        if(carro.velocidade > this.limiteVelovidade){
-            emitirNotificacao(carro.placa, carro.velocidade);
-        }
+        Radar radar = new Radar();
+        radar.localizacao = "Pistao Sul";
+        radar.limiteVelovidade = 60;
 
+        radar.avaliarVelocidade(porshe);
+
+        porshe.acelerar();
+        porshe.acelerar();
+        porshe.acelerar();
+        porshe.acelerar();
+        porshe.acelerar();
+        porshe.acelerar();
+        porshe.acelerar();
+
+        radar.avaliarVelocidade(porshe);
     }
 
 }
