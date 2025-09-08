@@ -13,7 +13,7 @@ public class Carro{
 
     public void feriar(){
         if(this.velocidade > 0){
-            this.velocidade -=10;
+            this.velocidade -=15;
         }
     }
 }
